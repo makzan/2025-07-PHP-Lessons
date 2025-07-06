@@ -1,8 +1,13 @@
 <div class="next-prev-nav">
     <?php $id = $_GET["id"]; ?>
-    <?php $prevId = max(0, $id - 1); ?>
-    <a href="?mode=single&id=<?php echo $prevId; ?>">上一個</a>
+    <?php $previousQuote = getPreviousQuote($id); ?>
+    <?php $nextQuote = getNextQuote($id); ?>
 
-    <?php $nextId = min(count($quotes) - 1, $id + 1); ?>
-    <a href="?mode=single&id=<?php echo $nextId; ?>">下一個</a>
+    <?php if ($previousQuote): ?>
+        <a href="?mode=single&id=<?php echo $previousQuote["id"]; ?>">上一個</a>
+    <?php endif; ?>
+
+    <?php if ($nextQuote): ?>
+        <a href="?mode=single&id=<?php echo $nextQuote["id"]; ?>">下一個</a>
+    <?php endif; ?>
 </div>

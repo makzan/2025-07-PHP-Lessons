@@ -1,8 +1,8 @@
 <h1>是日金句</h1>
 
 <blockquote>
-    <?php echo $quote[0]; ?>
-    <cite>– <?php echo $quote[1]; ?></cite>
+    <?php echo $quote["content"]; ?>
+    <cite>– <?php echo $quote["who"]; ?></cite>
 </blockquote>
 
 

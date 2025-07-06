@@ -1,26 +1,59 @@
 <?php
+require_once "connect_db.php";
 
-$quotes = [];
+// SQL basics
+// INSERT INTO quotes (content, who)
+// VALUES ('The only thing we have to fear is fear itself.', 'Franklin D. Roosevelt')
 
-$quotes[] = ["The only thing we have to fear is fear itself.", "Franklin D. Roosevelt"];
-$quotes[] = ["I think, therefore I am.", "René Descartes "];
-$quotes[] = ["To be, or not to be: that is the question.", "William Shakespeare "];
-$quotes[] = ["Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.", "Bernard M. Baruch"];
-$quotes[] = ["I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.", "Martin Luther King, Jr."];
-$quotes[] = ["The unexamined life is not worth living.", "Socrates"];
-$quotes[] = ["But man is not made for defeat. A man can be destroyed but not defeated.", "Ernest Hemingway "];
-$quotes[] = ["I love you the more in that I believe you had liked me for my own sake and for nothing else.", "John Keats "];
-$quotes[] = ["Life does not cease to be funny when people die any more than it ceases to be serious when people laugh.", "George Bernard Shaw "];
-$quotes[] = ["The greatest glory in living lies not in never falling, but in rising every time we fall.", "Nelson Mandela"];
+// Fetch all records
+// SELECT * FROM quotes
 
+// Fetch records by id
+// SELECT * FROM quotes WHERE id=1
+
+// Fetch random record
+// SELECT * FROM quotes ORDER BY RAND() LIMIT 1
+
+// or Fetch all, then shuffle the array in PHP
+
+
+function getAllQuotes() {
+    global $pdo;
+    $query = "SELECT * FROM quotes";
+    $stmt = $pdo->query($query);
+    $quotes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $quotes;
+}
+
+function getPreviousQuote($id) {
+    global $pdo;
+    $query = "SELECT * FROM quotes WHERE id < $id ORDER BY id DESC LIMIT 1";
+    $stmt = $pdo->query($query);
+    $quote = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $quote;
+}
+
+function getNextQuote($id) {
+    global $pdo;
+    $query = "SELECT * FROM quotes WHERE id > $id ORDER BY id ASC LIMIT 1";
+    $stmt = $pdo->query($query);
+    $quote = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $quote;
+}
 
 function getQuote($id) {
-    global $quotes;
-    return $quotes[$id];
+    global $pdo;
+    $query = "SELECT * FROM quotes WHERE id=$id";
+    $stmt = $pdo->query($query);
+    $quote = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $quote;
 }
 
 function getRandomQuote() {
-    global $quotes;
-    $randomIndex = array_rand($quotes);
-    return $quotes[$randomIndex];
+    global $pdo;
+
+    $query = "SELECT * FROM quotes ORDER BY RAND() LIMIT 1";
+    $stmt = $pdo->query($query);
+    $quote = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $quote;
 }
