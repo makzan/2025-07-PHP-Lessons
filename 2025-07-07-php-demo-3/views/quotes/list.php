@@ -3,7 +3,9 @@
 <?php foreach ($quotes as $id => $quote): ?>
     <p>
         <a href="?mode=single&id=<?php echo $id; ?>">
-            <?php echo $quote; ?>
+            <?php echo $quote[0]; ?>
+            –
+            <?php echo $quote[1]; ?>
         </a>
     </p>
 <?php endforeach; ?>

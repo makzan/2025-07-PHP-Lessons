@@ -1,6 +1,9 @@
 <h1>是日金句</h1>
 
-<p><?php echo $quote; ?></p>
+<blockquote>
+    <?php echo $quote[0]; ?>
+    <cite>– <?php echo $quote[1]; ?></cite>
+</blockquote>
 
 
 <?php if (isset($_GET["id"])): ?>
