@@ -1,0 +1,38 @@
+body {
+    font-family: sans-serif;
+    /* margin: 0; */
+    /* padding: 0; */
+}
+nav {
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            flex: 1;
+
+            a {
+                display: block;
+                text-align: center;
+                padding: 10px;
+                text-decoration: none;
+                color: #333;
+                border-bottom: 1px solid #ccc;
+
+                &:hover {
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    border-top: 1px solid #eee;
+    /* background-color: #eee; */
+    margin-top: 2em;
+}
