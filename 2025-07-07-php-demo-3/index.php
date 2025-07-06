@@ -1,0 +1,18 @@
+<?php
+
+include_once "models/quote.php";
+
+// PHP 4 types of includes
+// include
+// include_once
+// require
+// require_once
+
+
+// two modes: default (single quote) and list
+$mode = "single";
+if (isset($_GET["mode"])) {
+    $mode = $_GET["mode"];
+}
+
+include "views/template.php";
