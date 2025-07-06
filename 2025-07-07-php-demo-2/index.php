@@ -10,13 +10,7 @@
     <header>
         <h1>PHP Demo 2</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.php?page=home">Home</a></li>
-            <li><a href="index.php?page=about">About</a></li>
-            <li><a href="index.php?page=contact">Contact</a></li>
-        </ul>
-    </nav>
+    <?php include "nav.php"; ?>
     <main>
         <?php
             if (isset($_GET['page'])) {
@@ -27,9 +21,7 @@
             }
         ?>
     </main>
-    <footer>
-        <p>&copy; 2026. Demo only</p>
-    </footer>
 
+    <?php include "footer.php"; ?>
 </body>
 </html>
