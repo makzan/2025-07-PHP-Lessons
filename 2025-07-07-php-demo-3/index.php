@@ -15,4 +15,12 @@ if (isset($_GET["mode"])) {
     $mode = $_GET["mode"];
 }
 
+if ($mode == "single") {
+    if (isset($_GET["id"])) {
+        $quote = getQuote($_GET["id"]);
+    } else {
+        $quote = getRandomQuote();
+    }
+}
+
 include "views/template.php";

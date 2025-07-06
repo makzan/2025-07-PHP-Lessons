@@ -12,3 +12,15 @@ $quotes[] = "But man is not made for defeat. A man can be destroyed but not defe
 $quotes[] = "I love you the more in that I believe you had liked me for my own sake and for nothing else. - John Keats ";
 $quotes[] = "Life does not cease to be funny when people die any more than it ceases to be serious when people laugh. - George Bernard Shaw ";
 $quotes[] = "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela";
+
+
+function getQuote($id) {
+    global $quotes;
+    return $quotes[$id];
+}
+
+function getRandomQuote() {
+    global $quotes;
+    $randomIndex = array_rand($quotes);
+    return $quotes[$randomIndex];
+}
