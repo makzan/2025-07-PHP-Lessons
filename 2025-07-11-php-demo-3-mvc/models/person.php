@@ -10,6 +10,14 @@ function getPerson($id) {
     return $person;
 }
 
+function getAllPeople() {
+    global $pdo;
+    $query = "SELECT * FROM people";
+    $stmt = $pdo->query($query);
+    $people = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $people;
+}
+
 function personNameFromQuote($id) {
     return personFromQuote($id)["name"];
 }

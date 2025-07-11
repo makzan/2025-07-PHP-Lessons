@@ -11,6 +11,7 @@
         <nav>
             <a href="/">Home</a>
             <a href="?mod=quotes&action=random">隨機金句</a>
+            <a href="?mod=people">名人</a>
         </nav>
     </header>
 
