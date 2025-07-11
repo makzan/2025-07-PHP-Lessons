@@ -1,0 +1,34 @@
+h1 {
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(39, 99, 151);
+    padding: .1em .2em;
+    border-radius: 3px;
+
+    &:hover {
+        /* text-decoration: underline; */
+        color: darkslategray;
+        background: rgb(232, 241, 252);
+    }
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 2em;
+
+    cite {
+        font-size: 0.5em;
+        display: block;
+        margin-top: 0.5em;
+        color: #666;
+    }
+}
+
+
+.next-prev-nav {
+    text-align: center;
+    margin-top: 1em;
+}
