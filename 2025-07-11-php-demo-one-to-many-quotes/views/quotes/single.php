@@ -2,7 +2,7 @@
 
 <blockquote>
     <?php echo $quote["content"]; ?>
-    <cite>– <?php echo $quote["who"]; ?></cite>
+    <cite>– <?php echo personNameFromQuote($quote["id"]) ; ?></cite>
 </blockquote>
 
 
