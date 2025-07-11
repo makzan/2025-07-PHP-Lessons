@@ -7,13 +7,20 @@
     <title>Quotes</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="?mod=quotes&action=random">隨機金句</a>
+        </nav>
+    </header>
 
-    <nav>
-        <a href="?mode=single">是日金句</a>
-        <a href="?mode=list">金句列表</a>
-    </nav>
+    <main>
+        <?php include("controllers/$mod/$action.php"); ?>
+    </main>
 
-    <?php include "views/quotes/$mode.php"; ?>
+    <footer>
+        Demo purpose, free to use. 2025-07-11, Makzan.
+    </footer>
 
 </body>
 </html>

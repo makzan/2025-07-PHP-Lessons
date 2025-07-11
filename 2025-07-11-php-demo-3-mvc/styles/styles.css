@@ -32,3 +32,9 @@ blockquote {
     text-align: center;
     margin-top: 1em;
 }
+
+footer {
+    text-align: center;
+    margin-top: 3em;
+    color: #aaa;
+}
